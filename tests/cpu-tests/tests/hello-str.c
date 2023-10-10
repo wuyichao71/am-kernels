@@ -6,6 +6,17 @@ int main() {
 	sprintf(buf, "%s", "Hello world!\n");
 	check(strcmp(buf, "Hello world!\n") == 0);
 
+	/* sprintf(buf, "%s%s", "Hello world!\n", "Hello world!\n"); */
+  /* for (int i= 0; buf[i]; i++) */
+  /* { */
+    /* if (buf[i] == ' ') */
+      /* putch('_'); */
+    /* else */
+      /* putch(buf[i]); */
+
+  /* } */
+	/* check(strcmp(buf, "Hello world!\nHello world!\n") == 0); */
+
 	sprintf(buf, "%d + %d = %d\n", 1, 1, 2);
 	check(strcmp(buf, "1 + 1 = 2\n") == 0);
 
