@@ -29,13 +29,21 @@ void reset_all() {
 
 void check_cmp(uint8_t *A, uint8_t *B, int n, int code)
 {
-  int dif;
-  for (int i = 0; i < N; i++)
+  int dif, i;
+  for (i = 0; i < N; i++)
   {
     dif = A[i] - B[i];
-    if (dif != 0 || i >= n)
+    if (dif != 0)
       break;
   }
+
+  if (i >= n)
+  {
+    assert(code == 0);
+    return;
+  }
+
+
 
   if (dif < 0)
     assert(code < 0);
@@ -48,7 +56,7 @@ void check_cmp(uint8_t *A, uint8_t *B, int n, int code)
 void test_memcmp() {
   int i;
   for (i = 0; i < N; i++) {
-    for (int n = 0; n < N; n++)
+    for (int n = 0; n <= N; n++)
     {
       reset_all();
       src[i] = i / 2;
